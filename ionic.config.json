@@ -1,0 +1,7 @@
+{
+  "name": "fypInterface",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
