@@ -1,0 +1,33 @@
+<ion-content>
+  <ion-slides pager="true" [options]="slideOpts">
+      <ion-slide>
+          <img src="https://firebasestorage.googleapis.com/v0/b/habib-store1.appspot.com/o/Images%2Fmain.jpg?alt=media&token=f5890d70-0d79-4a92-ab3c-8f9ce04aff0a"/>
+          <h2>Welcome to the <b>FDA</b></h2>
+          <p class='pdlr'>The <b>filter design app</b> provides you a platform to generate values of passive components with the given set of simplified inputs,
+            for the sake of supressing harmonics. </p>
+      </ion-slide>
+      <ion-slide>
+          <img src="https://firebasestorage.googleapis.com/v0/b/habib-store1.appspot.com/o/Images%2Fmain2.jpg?alt=media&token=363bba68-b20f-405f-93e4-41a460a12fe3"/>
+          <h2>What are harmonics?</h2>
+          <p class='pdlr'><b>Harmonics</b> are the way to express how distoted the current waveform is from the pure sinusoid resulting in the malfunctioning of power electronic devices.</p>
+      </ion-slide>
+      <ion-slide>
+          <img src="https://ionicframework.com/docs/demos/api/slides/slide-3.png"/>
+          <h2>Ready to Design?</h2>
+          <form  [formGroup]="myform" (ngSubmit)="processForm()">
+            <ion-list lines="full" class="ion-no-margin ion-no-padding">
+                <ion-item>
+                    <ion-label position="stacked">Single Phase or Three Phase</ion-label>
+                    <ion-select formControlName="phase" placeholder="Select One">
+                      <ion-select-option  [value]="single">Single Phase</ion-select-option>
+                      <ion-select-option [value]="three">Three Phase</ion-select-option>
+                  </ion-select>
+                  </ion-item>
+                </ion-list>
+            <div  class="ion-padding">
+                <ion-button fill="clear" type="submit" [disabled]="!myform.valid">Continue <ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
+            </div>
+          </form>
+      </ion-slide>
+    </ion-slides>
+</ion-content>

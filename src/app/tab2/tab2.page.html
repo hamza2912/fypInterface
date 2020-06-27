@@ -1,9 +1,89 @@
+
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Two
+      Motor Specification
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content class='fadeIn' fullscreen>
+    <ion-card>
+  <form [formGroup]="myform" (ngSubmit)="processForm()">
+    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+      <ion-item>
+        <ion-label position="stacked">Power (KW)</ion-label>
+        <ion-select formControlName="power" placeholder="Select One">
+          <ion-select-option  [value]="A">0.75</ion-select-option>
+          <ion-select-option [value]="B">1.5</ion-select-option>
+          <ion-select-option [value]="C">2.2</ion-select-option>
+          <ion-select-option [value]="D">3.7</ion-select-option>
+          <ion-select-option [value]="E">4</ion-select-option>
+          <ion-select-option [value]="F">5.5</ion-select-option>
+          <ion-select-option [value]="G">7.5</ion-select-option>
+          <ion-select-option [value]="H">11</ion-select-option>
+          <ion-select-option [value]="I">15</ion-select-option>
+          <ion-select-option [value]="J">18.5</ion-select-option>
+          <ion-select-option [value]="K">22</ion-select-option>
+          <ion-select-option [value]="L">30</ion-select-option>
+          <ion-select-option [value]="M">37</ion-select-option>
+          <ion-select-option [value]="N">45</ion-select-option>
+          <ion-select-option [value]="O">55</ion-select-option>
+          <ion-select-option [value]="P">75</ion-select-option>
+          <ion-select-option [value]="Q">90</ion-select-option>
+          <ion-select-option [value]="R">110</ion-select-option>
+          <ion-select-option [value]="S">132</ion-select-option>
+          <ion-select-option [value]="T">160</ion-select-option>
+          <ion-select-option [value]="U">185</ion-select-option>
+          <ion-select-option [value]="V">220</ion-select-option>
+          <ion-select-option [value]="W">280</ion-select-option>
+          <ion-select-option [value]="X">315</ion-select-option>
+          <ion-select-option [value]="Y">355</ion-select-option>
+
+      </ion-select>
+      </ion-item>
+
+      <ion-item *ngIf='single'>
+          <ion-label position="stacked">Line Voltage (V)</ion-label>
+          <ion-input required type="number" formControlName="voltage"></ion-input>
+        </ion-item>
+        <ion-item *ngIf='!single'>
+            <ion-label position="stacked">Voltage (Line to Line)(V)</ion-label>
+            <ion-input required type="number" formControlName="voltage"></ion-input>
+          </ion-item>
+
+        
+      <ion-item>
+        <ion-label position="stacked">Frequency (Hz)</ion-label>
+        <ion-select  formControlName="frequency" placeholder="Select One">
+            <ion-select-option  [value]="f1">50Hz</ion-select-option>
+            <ion-select-option [value]="f2">60Hz</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Power Factor</ion-label>
+        <ion-input required type="number" formControlName="pf"></ion-input>
+      </ion-item>
+    
+
+
+    </ion-list>
+
+    <div class="ion-padding">
+      <ion-button size="small"  type="submit" [disabled]="!myform.valid" class="ion-no-margin">Next</ion-button>
+    </div>
+  </form>
+
+  <!-- <ion-item>
+    <ion-label>
+      Voltgae
+    </ion-label>
+   10V
+  </ion-item> -->
+  </ion-card>
+  <div align='center'>
+  <img  class='imgg' src="https://firebasestorage.googleapis.com/v0/b/habib-store1.appspot.com/o/Images%2Fmotor.jpg?alt=media&token=51d7b8fc-c227-42a2-bf57-2861bfe499b8"/>
+  </div>
+
+</ion-content>

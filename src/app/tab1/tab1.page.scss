@@ -1,4 +1,24 @@
-.welcome-card img {
-  max-height: 35vh;
-  overflow: hidden;
+
+
+.swiper-slide {
+  display: block;
+}
+.imgg {
+  height: 50%;
+  width: 60%;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+  animation-duration: 1s;
 }

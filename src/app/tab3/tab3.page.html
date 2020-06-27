@@ -1,9 +1,82 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Three
+      Filter Specification
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content class='fadeIn' fullscreen>
+    <ion-card>
+  <form  [formGroup]="myform" (ngSubmit)="processForm()">
+    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+          <ion-item>
+            <ion-label position="stacked">Impedance (%)</ion-label>
+            <ion-select formControlName="impedance" placeholder="Select One">
+                <ion-select-option  [value]="A">3%</ion-select-option>
+                <ion-select-option [value]="B">5%</ion-select-option>
+                <ion-select-option [value]="B">7%</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+    </ion-list>
+
+    <div  class="ion-padding">
+      <ion-button size="small"  type="submit"  [disabled]="!myform.valid" class="ion-no-margin">Generate Values</ion-button>
+    </div>
+  </form>
+
+  <ion-item >
+    <ion-label >
+      Reactor Current
+    </ion-label>
+    <ion-text color="danger">
+      {{Current}} A
+    </ion-text>
+  </ion-item>
+  <ion-item>
+      <ion-label>
+        Reactor Inductance
+      </ion-label>
+      <ion-text color="danger">
+     {{snI[0]}}{{expn}}{{snI[1]}} H
+    </ion-text>
+    </ion-item>
+    <ion-item >
+      <ion-label>
+        Wire Guage -AWG
+      </ion-label>
+      <ion-text color="danger">
+     {{AWG}} AWG
+    </ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        Wire Diameter
+      </ion-label>
+      <ion-text color="danger">
+     {{diameter}}mm
+    </ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        Wire Cross Sectional Area
+      </ion-label>
+      <ion-text color="danger">
+     {{area}} mm^2
+    </ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        Capacitor
+      </ion-label>
+      <ion-text color="danger">
+      {{snC[0]}}{{expn}}{{snC[1]}} F
+    </ion-text>
+    </ion-item>
+</ion-card>
+<div align='center'>
+<img  class='imgg' src="https://firebasestorage.googleapis.com/v0/b/habib-store1.appspot.com/o/Images%2Ffilter.jpg?alt=media&token=0d1b9222-ec50-4545-aea4-58a0a58bc710"/>
+</div>
+
+</ion-content>
